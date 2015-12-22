@@ -103,12 +103,12 @@ define( ["qlik"], function ( qlik ) {
 					html += "<button class='" + clazz + "' data-alt='" + alt.value + "'>" + alt.label + "</button>";
 				} );
 			} else if ( layout.render === 's' ) {
-				html += '<select class="' + SELECT + '">';
+				html += '<div class="' + SELECT + '"><select class="select">';
 				layout.alternatives.forEach( function ( alt ) {
 					var sel = alt.value === layout.variableValue ? 'selected' : '';
 					html += "<option value='" + alt.value + "' " + sel + " >" + alt.label + "</option>";
 				} );
-				html += '</select>';
+				html += '</select><div class="arrow"></div><div class="border"></div></div>';
 			} else if ( layout.render === 'l' ) {
 				html += '<input type="range" min="0" max="100" style="width:98%" value="' + layout.variableValue + '"/>';
 			} else {
